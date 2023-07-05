@@ -10,8 +10,8 @@ class Rectangle:
             width (int): width of rectangle
             height (int): height of rectangle
         """
-        self._width = width
-        self._height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -53,10 +53,14 @@ class Rectangle:
 
     def __str__(self):
         """Prints rectangle using '#' string"""
+        str = []
         if self._width == 0 or self._height == 0:
             return ""
         else:
-            for i in range(self._width):
-                for j in range(self._height):
-                    print("#")
-                print('\n')
+            for i in range(self._height):
+                for j in range(self._width):
+                    str.append("#")
+                str.append('\n')
+
+            str.pop()
+        return "".join(str)
