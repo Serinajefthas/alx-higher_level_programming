@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Returns list available methods and objects of 
+"""Returns list available methods and objects of
 objects
 """
 
