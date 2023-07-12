@@ -1,16 +1,20 @@
 #!/usr/bin/python3
-"""Defines a class Square based on BaseGeometry class
+"""Defines a class Square based on Rectangle class
 
 Attributes:
-    size (int): size of one side of the square
+    width (int): width of rectangle
+    height (int): height of rectangle
 """
 
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(BaseGeometry):
-    """class Square"""
+class Square(Rectangle):
+    """class Square
+    Args:
+        Rectangle (Rectangle): rectangle object
+    """
 
     def __init__(self, size):
         """Initialise new square object
@@ -19,13 +23,18 @@ class Square(BaseGeometry):
         """
         self._size = size
         self.integer_validator("size", size)
+        super().__init__(size, size)
 
-    def area(self, size):
-        """Area of the square"""
+    def area(self):
+        """Area of the square
+
+        Returns:
+            int: area of square
+        """
         return self._size ** 2
 
     def __str__(self):
-        """Funtion to print width/height
+        """Funtion to print width/height of square
 
         Returns:
             Return width/height
