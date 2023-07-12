@@ -1,7 +1,14 @@
 #!/usr/bin/python3
+""" Module that contains a function that returns an object by
+a JSON representation
+"""
 import json
 
 
 def from_json_string(my_str):
-    obj = json.loads(my_str)
-    return (obj)
+    """ Function that returns an object by a JSON representation
+
+    Args:
+        my_str: JSON representation, str not object
+    """
+    return json.loads(my_str)
