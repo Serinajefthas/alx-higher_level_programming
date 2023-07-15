@@ -9,7 +9,7 @@
     """
 
 
-Base = __import__('base.py').Base
+from .base import Base
 
 
 class Rectangle(Base):
@@ -19,14 +19,14 @@ class Rectangle(Base):
         height (int): height of rectangle
         x (int): x value
         y (int): y value
-        id (int): id from Base class
+        id (int): id of rectangle; from Base class
     """
     def __init__(self, width, height, x=0, y=0, id=None):
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
 
     @property
     def width(self):
@@ -60,7 +60,7 @@ class Rectangle(Base):
     def x(self):
         """Get method to retrieve x value"""
         return (self.__x)
-    
+
     @x.setter
     def x(self, value):
         """Set method to set value of x attr"""
@@ -74,7 +74,7 @@ class Rectangle(Base):
     def y(self):
         """Get method to retrieve y value"""
         return (self.__y)
-    
+
     @y.setter
     def y(self, value):
         """Set method to set value of y attr"""
@@ -87,23 +87,14 @@ class Rectangle(Base):
     def area(self):
         """Returns area of rectangle"""
         return (self.__width * self.__height)
-    
+
     def display(self):
         """Prints rectangle to stdout using '#' char"""
         for row in range(self.__height):
-                print("#" * self.__width)
+            
+            print("#" * self.__width)
 
     def __str__(self):
         """Prints rectangle width/height"""
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(id, 
-                    self.__x, self.__y, self.__width, self.__height))
-
-    def update(self, *args, **kwargs):
-        if args != None:
-            Rectangle.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
-        else:
-            for key, value in kwargs.items():
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                self.__x, self.__y, self.__width, self.__height))
