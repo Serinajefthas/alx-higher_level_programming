@@ -90,11 +90,23 @@ class Rectangle(Base):
 
     def display(self):
         """Prints rectangle to stdout using '#' char"""
-        for row in range(self.__height):
-            
-            print("#" * self.__width)
+        for i in range(self.__height + self.__y):
+            if i >= (self.__y):
+                print(" " * self.__x + "#" * self.__width)
+            else:
+                print(" " * self.__x)
 
     def __str__(self):
         """Prints rectangle width/height"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                 self.__x, self.__y, self.__width, self.__height))
+
+    def update(self, *args, **kwargs):
+        """Assigns arg or key/value pair to each variable"""
+        prev_args = [self.__width, self.__height, self.__x, self.__y]
+        if args is not None and len(args) != 0:
+            for i in range(args):
+                setattr(self, prev_args[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
