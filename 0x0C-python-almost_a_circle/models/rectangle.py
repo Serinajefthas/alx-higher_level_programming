@@ -96,9 +96,9 @@ class Rectangle(Base):
         [print('') for i in range(self.y)]
         for j in range(self.height):
             [print(" ", end='') for k in range(self.x)]
-            [print("#", end='') for l in range(self.width)]
+            [print("#", end='') for n in range(self.width)]
             print()
-    
+
     def __str__(self):
         """Prints rectangle width/height"""
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
