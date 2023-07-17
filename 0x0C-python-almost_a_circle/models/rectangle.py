@@ -90,11 +90,14 @@ class Rectangle(Base):
 
     def display(self):
         """Prints rectangle to stdout using '#' char"""
-        for i in range(self.__height + self.__y):
-            if i >= (self.__y):
-                print(" " * self.__x + "#" * self.__width)
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+        for i in range(self.height + self.y):
+            if i >= (self.y):
+                print(" " * self.x + "#" * self.width)
             else:
-                print(" " * self.__x)
+                print(" " * self.x)
 
     def __str__(self):
         """Prints rectangle width/height"""
