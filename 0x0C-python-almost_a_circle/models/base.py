@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a class Base"""
 
+
 class Base:
     """Base class
     Args:
@@ -12,7 +13,7 @@ class Base:
         """Base constructor, initilise new obj
         Args:
             id (int): id of the object
-        """ 
+        """
         if id is not None:
             self.id = id
         else:

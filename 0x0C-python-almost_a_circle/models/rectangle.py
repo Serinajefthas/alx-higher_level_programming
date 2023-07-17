@@ -105,7 +105,7 @@ class Rectangle(Base):
         """Assigns arg or key/value pair to each variable"""
         prev_args = [self.__width, self.__height, self.__x, self.__y]
         if args is not None and len(args) != 0:
-            for i in range(args):
+            for i in range(len(args)):
                 setattr(self, prev_args[i], args[i])
         else:
             for key, value in kwargs.items():
