@@ -60,3 +60,11 @@ class Square(Rectangle):
                     setattr(self, "height", value)
                 else:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        return {
+            "id": self.id,
+            "x": self.x,
+            "size": self.width,
+            "y", self.y,
+        }
