@@ -62,6 +62,7 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
+        """Returns dictionary rep of square"""
         return {
             "id": self.id,
             "x": self.x,
