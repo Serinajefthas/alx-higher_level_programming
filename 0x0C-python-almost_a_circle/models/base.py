@@ -25,7 +25,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """List of dictionaries to JSON string"""
-        if list_dictionaries is None or list_dictionaries == "[]":
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
@@ -41,14 +41,14 @@ class Base:
             if list_objs is None:
                 file.write("[]")
             else:
-                for i in range(list_objs):
+                for i in range(len(list_objs)):
                     list_dicts.append(list_objs[i].to_dictionary())
                 file.write(Base.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
         """Returns json string rep of list of dictionaries"""
-        if json_string is None or json_string == "[]":
+        if json_string is None or json_string == []:
             return []
         else:
             return json.loads(json_string)
@@ -76,5 +76,5 @@ class Base:
                 return "[]"
             else:
                 list_dicts = cls.from_json_string(file.read())
-                for i in range(list_dicts):
-                    list_instances.append(cls.create(**list_cls[i])) 
+                for i in range(len(list_dicts)):
+                    list_instances.append(cls.create(**list_dicts[i]))
