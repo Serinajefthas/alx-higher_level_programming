@@ -27,7 +27,6 @@ class Student:
             return self.__dict__
 
         new_dict = {}
-        
         for i in attrs:
             try:
                 new_dict[i] = self.__dict__[i]
