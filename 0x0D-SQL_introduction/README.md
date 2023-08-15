@@ -85,3 +85,19 @@ id = 4, name = "George", score = 8
 
 16-no_link.sql: MySQL script that lists the score and name of all records in the table second_table in order of descending score.
 Does not display rows without a name value.
+
+17. Go to UTF8
+
+100-move_to_utf8.sql: MySQL script that converts the hbtn_0c_0 database to UTF8(not done)
+
+18. Temperatures #0
+
+101-avg_temperatures.sql: MySQL script that displays the average temperature (Fahrenheit) by city in descending order.
+
+19. Temperatures #1
+
+102-top_city.sql: MySQL script that displays the three cities with the highest average temperature from July to August in descending order.
+
+20. Temperature #2
+
+103-max_state.sql: MySQL script that displays the max temperature of each state in order of state name.
