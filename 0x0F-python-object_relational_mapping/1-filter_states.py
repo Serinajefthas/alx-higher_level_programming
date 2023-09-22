@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""List all states from db hbtn_0e_0_usa"""
+"""List all states w name starting 'N' from db hbtn_0e_0_usa"""
 import MySQLdb
 import sys
 
@@ -14,7 +14,8 @@ if __name__ == "__main__":
                                 db=database_name)
 
     cursor = sqlserver.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY states.id")
+    cursor.execute("SELECT * FROM states WHERE name
+                   LIKE 'N%' ORDER BY states.id")
 
     rows = cursor.fetchall()
     for i in rows:
