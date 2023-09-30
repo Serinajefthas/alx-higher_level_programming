@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# script displays body of response(in utf-8) of POST request to url
-# w email as param
+"""script displays body of response(in utf-8) of POST request to url
+w email as param"""
 import urllib.request
 import urllib.parse
 import sys

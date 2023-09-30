@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Script fetches url using requests package
+""" Script fetches url using requests package"""
 import requests
 
 
