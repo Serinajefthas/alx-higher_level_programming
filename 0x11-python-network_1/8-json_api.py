@@ -5,12 +5,14 @@ import sys
 
 
 if __name__ == "__main__":
-    if len(sys.argv[1]) == 2:
-        q = sys.argv[1]
-    else:
+    if len(sys.argv) == 1:
         q = ""
+    else:
+        q = sys.argv[1]
     data = {'q': q}
-    if r.headers.get('content-type') == 'application/json':
+
+    r = requests.post("http://0.0.0.0:5000/search_user", data=data)
+    try:
         jsondata = r.json()
         if jsondata:
             id = jsondata.get('id')
@@ -18,5 +20,5 @@ if __name__ == "__main__":
             print('[{}] {}'.format(id, name))
         else:
             print('No result')
-    else:
+    except ValueError:
         print('Not a valid JSON')

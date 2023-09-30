@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """script displays body of response (decoded utf-8)
 manages HTTPError exceptions and status codes"""
-import urllib
+import urllib.request
+import urllib.error
 import sys
 
 
