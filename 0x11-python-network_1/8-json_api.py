@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# script sends post request w arg letter as param using requests package
+"""script sends post request w arg letter as param using requests package"""
 import requests
 import sys
 

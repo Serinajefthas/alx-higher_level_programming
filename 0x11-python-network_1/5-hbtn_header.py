@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Script displays value of http response header variable
+""" Script displays value of http response header variable"""
 import requests
 import sys
 
