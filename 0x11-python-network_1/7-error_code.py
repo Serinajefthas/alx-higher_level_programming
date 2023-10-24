@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""script displays error code from http status code uses requests package not urllib"""
+"""script displays error code from http status code
+using requests package not urllib"""
 import requests
 import sys
 

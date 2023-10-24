@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Script sends post request to url w email as param using request package returns body of reponse"""
+"""Script sends post request to url w email as param
+using request package, returns body of reponse"""
 import requests
 import sys
 
